@@ -1,0 +1,12 @@
+.profile__button-pen {
+    position: absolute;
+    padding-left: 7px;
+    cursor: pointer;
+}
+@media screen and (max-width: 332px) {
+    .profile__button-pen {
+        max-width: 7.5px;
+        min-height: 7.5px;
+        padding-left: 5.5px;
+    }
+  }
