@@ -8,7 +8,7 @@ let editProfile = document.querySelector(".profile__edit-button_about");
 let profileTitle = document.querySelector(".profile__title");
 let profileSubtitle = document.querySelector(".profile__subtitle");
 
-let popupClose = document.querySelector(".popup__close-button_about");
+let popupClose = document.querySelector(".popup__close-button");
 
 function openPopup() {
   popup.classList.add("popup_opened");
