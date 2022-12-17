@@ -8,6 +8,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+}
+.popup_none {
     display: none;
 }
 .popup_opened {

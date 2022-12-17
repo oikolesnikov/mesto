@@ -1,4 +1,6 @@
 .elements__wrapper {
-    background-image: url(../../../images/cover.png);
+    background-color: white;
+    border-radius: 10px;
     background-repeat: no-repeat;
+    width: 282px;
  }

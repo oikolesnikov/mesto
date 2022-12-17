@@ -1,9 +1,0 @@
-.profile__add-square_small {
-    display: none;
-}
-@media screen and (max-width: 332px) {
-    .profile__add-square_small {
-        display: block;
-        height: 50px;
-    }
-  }
