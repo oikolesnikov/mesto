@@ -1,9 +1,7 @@
 .header {
-    border-bottom: 1px solid rgb(84, 84, 84, 0.7);
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
     margin: 0 auto;
     max-width: 880px;
     padding-top: 45px;
-}
-.header:first-child {
     padding-bottom: 41px;
 }

@@ -1,10 +1,10 @@
 .profile__title {
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 42px;
     line-height: 48px;
     color: #FFFFFF;
-    width: 294px;
+    width: 303px;
     margin: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -15,7 +15,7 @@
         font-size: 27px;
         line-height: 33px;
         padding-top: 22.25px;
-        width: 189px;
+        width: 195px;
         padding-left: 45px;
     }
   }

@@ -1,7 +1,7 @@
 .profile__avatar {
     grid-area: profile__avatar;
-    max-width: 168.75px;
-    max-height: 127.5px;
-    object-fit: contain;
+    width: 127px;
+    height: 127px;
+    object-fit: cover;
     border-radius: 50%;
 }
