@@ -1,5 +1,5 @@
 #### Адаптивный сайт - Mesto Russia
-[https://oikolesnikov.github.io/mesto/index.html]
+[]
 # На данном сайте использовались такие технологии как:
 *FlexBox
 *Grid
