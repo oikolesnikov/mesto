@@ -41,7 +41,7 @@ export const profileInfo = {
 
 export const elementsCase = '.elements';
 export const elementTemplate = '.element-template';
-export const profileBtnEdit = document.querySelector('.profile__edit-button');
+export const profileButtonEdit = document.querySelector('.profile__edit-button');
 export const profileTitleInput = document.querySelector('.popup__input_text_title');
 export const profileSubtitleInput = document.querySelector('.popup__input_text_subtitle');
-export const profileBtnAdd = document.querySelector('.profile__add-button');
+export const profileButtonAdd = document.querySelector('.profile__add-button');
