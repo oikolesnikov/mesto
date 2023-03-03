@@ -8,18 +8,24 @@ export default class Card {
     }
 
     createCard() {
-        this.elementCard = this.elementTemplate.cloneNode(true);
-
-        this._elementsImage = this.elementCard.querySelector('.elements__image');
-        this._elementsText = this.elementCard.querySelector('.elements__text');
-        this._like = this.elementCard.querySelector('.elements__like');
-        this._button = this.elementCard.querySelector('.elements__delete')
+        this.elementCard = this._getTemplate();
+        
+        this._elementsImage = this.elementCard.querySelector('.element__image');
+        this._elementsText = this.elementCard.querySelector('.element__title');
+        this._like = this.elementCard.querySelector('.element__like-button');
+        this._button = this.elementCard.querySelector('.element__delete-button')
 
         this._nameCard();
         this._setEventHandlers();
-
+       
         return this.elementCard;
     };
+
+    _getTemplate() {
+        const element = document.querySelector(this.elementTemplate).content.querySelector('.element').cloneNode(true);
+        
+        return element;
+    }
 
     _nameCard = () => {
 

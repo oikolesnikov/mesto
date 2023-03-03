@@ -6,7 +6,7 @@
     margin: 0;
     width: 18px;
     height: 19px;
-    background-image: url('../../../images/basket.svg');
+    background-image: url('./../../../images/basket.svg');
     background-size: contain;
     background-color: transparent;
     background-repeat: no-repeat;

@@ -29,17 +29,12 @@ function createFormValidator(formElement) {
 const popupImage = new PopupWithImage('.popup-image');
 popupImage.setEventListeners();
 
-const handleCardClick = (elementsImage, elementsText) => {
-
-    cardImg.src = elementsImage.src;
-    cardImg.alt = elementsImage.alt;
-    imgPopupSubtitle.textContent = elementsText.textContent;
-  
+const handleCardClick = (elementsText, elementsImage) => {
     popupImage.open(elementsText, elementsImage);
   }
-
-function createCard(element) {
-
+  
+  function createCard(element) {
+  
     const card = new Card(element, elementTemplate, handleCardClick);
     const elementCard = card.createCard();
   
@@ -73,8 +68,8 @@ profileButtonEdit.addEventListener('click', function () {
 
 const popupWithFormProfile = new PopupWithForm('.popup-edit', {
     submitForm: (data) => {
-
-        userInfo.setUserInfo(data);
+        
+        userInfo.setUserInfo(data.name, data.info);
     }
 });
 

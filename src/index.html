@@ -23,19 +23,16 @@
           </div>
           <button type="button" class="profile__add-button"></button>
         </section>
-        <template class="element-template">
-          <li class="elements__card">
-            <button type="button" class="elements__delete"></button>
-            <img class="elements__image popup__text_type_title" />
-            <article class="elements__titles">
-              <h2 class="elements__text popup__text_type_subtitle"></h2>
-              <button type="button" class="elements__like"></button>
-            </article>
-          </li>
-        </template>
+        <template id="element" class="element-template">
+          <article class="element">
+              <img class="element__image" src="#" alt="#">
+              <h2 class="element__title"></h2>
+              <button class="element__like-button" type="button"></button>
+              <button class="element__delete-button" type="button"></button>
+          </article>
+      </template>
       </main>
       <section class="elements">
-        <ul class="elements__cards"></ul>
       </section>
       <div class="popup popup-edit">
         <div class="popup__container">
