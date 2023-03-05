@@ -1,6 +1,6 @@
 import './index.css';
 import { validationConfig, initialCards, elementsCase, elementTemplate, profileInfo,
-    profileButtonEdit, profileTitleInput, profileSubtitleInput, profileButtonAdd,
+    profileButtonEdit, profileTitleInput, profileSubtitleInput, profileButtonAdd
 } from '../utils/constants.js';
 import Card from '../components/Card.js'
 import FormValidator from '../components/FormValidator.js';
@@ -29,21 +29,19 @@ function createFormValidator(formElement) {
 const popupImage = new PopupWithImage('.popup-image');
 popupImage.setEventListeners();
 
-const handleCardClick = (elementsText, elementsImage) => {
-    popupImage.open(elementsText, elementsImage);
-  }
-  
-  function createCard(element) {
-  
-    const card = new Card(element, elementTemplate, handleCardClick);
-    const elementCard = card.createCard();
-  
-  
-    return elementCard;
-  }
+const handleCardClick = (text, pic) => {
+
+    popupImage.open(text, pic);
+}
+
+//Cards
+const createCard = (firstItem, secondItem) => {
+
+    const card = new Card(firstItem, secondItem, elementTemplate, handleCardClick);
+    return card.generadeCard();
+}
 
 const defaultCardList = new Section({
-
     data: initialCards,
     renderer: (item) => {
 
@@ -67,6 +65,7 @@ profileButtonEdit.addEventListener('click', function () {
 });
 
 const popupWithFormProfile = new PopupWithForm('.popup-edit', {
+    
     submitForm: (data) => {
         
         userInfo.setUserInfo(data.name, data.info);
@@ -76,9 +75,10 @@ const popupWithFormProfile = new PopupWithForm('.popup-edit', {
 popupWithFormProfile.setEventListeners();
 
 const popupWithFormItem = new PopupWithForm('.popup-add', {
+
     submitForm: (item) => {
 
-        const cardElement = createCard(item.description, item.image);
+        const cardElement = createCard(item.nameTitle, item.pic);
 
         defaultCardList.addItem(cardElement);
     }
