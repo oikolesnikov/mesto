@@ -55,7 +55,6 @@ profileButtonAdd.addEventListener('click', function () {
     popupWithFormAdd.open();
 });
 
-
 const popupWithFormEdit = new PopupWithForm('.popup-edit', {
     
     handleForm: (data) => {
@@ -70,7 +69,7 @@ const popupWithFormAdd = new PopupWithForm('.popup-add', {
 
     handleForm: (item) => {
 
-        const cardElement = createCard(item.text, item.pic);
+        const cardElement = createCard(item.elementsText, item.elementsImage);
 
         defaultCardList.addItem(cardElement);
     }
@@ -92,15 +91,16 @@ const defaultCardList = new Section({
 
 defaultCardList.renderItems();
 
+
 const imgPopup = document.querySelector('.popup-image'); 
 const imgContainer = imgPopup.querySelector('.popup__container');
 const cardImg = imgContainer.querySelector('.popup__picture');
 const imgPopupSubtitle = imgContainer.querySelector('.popup__title_image');
 
-const popupImage = new PopupWithImage('.popup_image');
+const popupImage = new PopupWithImage('.popup-image');
   popupImage.setEventListeners();
 
-const handleCardClick = (elementsImage, elementsText) => {
+function handleCardClick(elementsImage, elementsText) {
 
     cardImg.src = elementsImage.src;
     cardImg.alt = elementsImage.alt;
@@ -112,7 +112,7 @@ const handleCardClick = (elementsImage, elementsText) => {
 function createCard(element) {
 
     const card = new Card(element, elementTemplate, handleCardClick);
-    //console.log(card);
+    console.log(card);
     const elementCard = card.newCard();
     return elementCard;
   }
