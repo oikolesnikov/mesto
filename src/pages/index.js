@@ -112,7 +112,7 @@ function handleCardClick(elementsImage, elementsText) {
 function createCard(element) {
   
     const card = new Card(element, elementTemplate, handleCardClick);
-    console.log(card);
+    
     const elementCard = card.newCard();
     return elementCard;
   }

@@ -5,7 +5,7 @@ export default class Card {
         this._link = element.link;
         this._elementTemplate = elementTemplate;
         this._handleCardClick = handleCardClick;
-        console.log(this._handleCardClick);
+        
     }
 
     _getTemplate() {
