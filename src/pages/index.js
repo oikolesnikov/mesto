@@ -109,10 +109,10 @@ function handleCardClick(elementsImage, elementsText) {
     popupImage.open(elementsImage, elementsText);
   }
 
-function createCard(element) {
-  
-    const card = new Card(element, elementTemplate, handleCardClick);
+function createCard(elementsImage, elementsText) {
     
+    const card = new Card(elementsImage, elementsText, elementTemplate, handleCardClick);
+    console.log(Card);
     const elementCard = card.newCard();
     return elementCard;
   }

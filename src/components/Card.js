@@ -59,6 +59,4 @@ export default class Card {
 
         return this.elementCard;
     };
-
-
 }
