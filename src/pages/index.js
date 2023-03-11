@@ -69,9 +69,9 @@ const popupWithFormAdd = new PopupWithForm('.popup-add', {
 
     handleForm: (item) => {
 
-        const cardElement = createCard(item.elementsText, item.elementsImage);
+        const cardElement = createCard(item.nameTitle, item.pic);
 
-        defaultCardList.addItem(cardElement);
+        defaultCardList.setItem(cardElement);
     }
 });
 
@@ -82,7 +82,7 @@ const defaultCardList = new Section({
     data: initialCards,
     renderer: (item) => {
 
-        const cardElement = createCard(item);
+        const cardElement = createCard(item.name, item.link);
         defaultCardList.setItem(cardElement);
     }
 }, 
@@ -116,7 +116,3 @@ function createCard(elementsImage, elementsText) {
     const elementCard = card.newCard();
     return elementCard;
   }
-
-
-
-  
