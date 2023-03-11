@@ -9,7 +9,7 @@ export default class PopupWithImage extends Popup {
         this._popupPicture = this._popup.querySelector('.popup__picture');
     }
 
-    open(elementsText, elementsImage) {
+    open(elementsImage, elementsText) {
         
         super.open();
 

@@ -111,7 +111,7 @@ function handleCardClick(elementsImage, elementsText) {
 
 function createCard(elementsImage, elementsText) {
     
-    const card = new Card(elementsImage, elementsText, elementTemplate, handleCardClick);
+    const card = new Card({name: elementsImage, link: elementsText}, elementTemplate, handleCardClick);
     console.log(Card);
     const elementCard = card.newCard();
     return elementCard;
