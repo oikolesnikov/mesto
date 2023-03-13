@@ -4,6 +4,16 @@ import { validationConfig,
          cardListSelector, 
          elementTemplate, 
          profileDescription,
+         profilePopup,
+         popupContainer,
+         itemAddPopup,
+         containerAdd,
+         profileForm,
+         formAdd,
+         profileButtonEdit,
+         nameAdd,
+         linkAdd,
+         profileButtonAdd,
 } from '../utils/constants.js';
 import FormValidator from '../components/FormValidator.js';
 import UserInfo from '../components/UserInfo.js';
@@ -12,17 +22,8 @@ import Section from '../components/Section.js';
 import Card from '../components/Card.js'
 import PopupWithImage from '../components/PopupWithImage.js';
 
-
-const profilePopup = document.querySelector('.popup-edit');
-const popupContainer = profilePopup.querySelector('.popup__container');
-const itemAddPopup = document.querySelector('.popup-add');
-const containerAdd = itemAddPopup.querySelector('.popup__container');
-const profileForm = popupContainer.querySelector('.popup__form');
-const formAdd = containerAdd.querySelector('.popup__form');
 const validationFormProfile = createFormValidator(profileForm);
 const validationFormImage = createFormValidator(formAdd);
-
-
 function createFormValidator(formElement) {
 
   const validationForm = new FormValidator(validationConfig, formElement);
@@ -32,10 +33,6 @@ function createFormValidator(formElement) {
 
 
 const userInfo = new UserInfo(profileDescription);
-
-const profileButtonEdit = document.querySelector('.profile__edit-button');
-const nameAdd = document.querySelector('.popup__input_text_title');
-const linkAdd = document.querySelector('.popup__input_text_subtitle');
 
 profileButtonEdit.addEventListener('click', function () {
 
@@ -47,7 +44,6 @@ profileButtonEdit.addEventListener('click', function () {
     popupWithFormEdit.open();
 });
 
-const profileButtonAdd = document.querySelector('.profile__add-button');
 
 profileButtonAdd.addEventListener('click', function () {
 
@@ -91,28 +87,18 @@ const defaultCardList = new Section({
 
 defaultCardList.renderItems();
 
-
-const imgPopup = document.querySelector('.popup-image'); 
-const imgContainer = imgPopup.querySelector('.popup__container');
-const cardImg = imgContainer.querySelector('.popup__picture');
-const imgPopupSubtitle = imgContainer.querySelector('.popup__title_image');
-
 const popupImage = new PopupWithImage('.popup-image');
   popupImage.setEventListeners();
 
-function handleCardClick(elementsImage, elementsText) {
-
-    cardImg.src = elementsImage.src;
-    cardImg.alt = elementsImage.alt;
-    imgPopupSubtitle.textContent = elementsText.textContent;
-
-    popupImage.open(elementsImage, elementsText);
+function handleCardClick(elementsText, elementsImage) {
+    
+    popupImage.open(elementsText, elementsImage);
   }
 
 function createCard(elementsImage, elementsText) {
     
     const card = new Card({name: elementsImage, link: elementsText}, elementTemplate, handleCardClick);
-    console.log(Card);
+   
     const elementCard = card.newCard();
     return elementCard;
   }

@@ -39,4 +39,17 @@ const initialCards = [
   }
 ];
 
+export const profilePopup = document.querySelector('.popup-edit');
+export const popupContainer = profilePopup.querySelector('.popup__container');
+export const itemAddPopup = document.querySelector('.popup-add');
+export const containerAdd = itemAddPopup.querySelector('.popup__container');
+export const profileForm = popupContainer.querySelector('.popup__form');
+export const formAdd = containerAdd.querySelector('.popup__form');
+
+export const profileButtonEdit = document.querySelector('.profile__edit-button');
+export const nameAdd = document.querySelector('.popup__input_text_title');
+export const linkAdd = document.querySelector('.popup__input_text_subtitle');
+
+export const profileButtonAdd = document.querySelector('.profile__add-button');
+
 export { initialCards, validationConfig, profileDescription, cardListSelector, elementTemplate };
