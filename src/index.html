@@ -14,6 +14,7 @@
       <main>
         <section class="profile">
           <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="Аватар" />
+          <div class="profile__avatar-edit"></div>
           <div class="profile__info">
             <div class="profile__info-wrapper">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -27,7 +28,10 @@
           <article class="element">
               <img class="element__image" src="#" alt="#">
               <h2 class="element__title"></h2>
-              <button class="element__like-button" type="button"></button>
+              <div class="element__like-wrapper">
+                  <button class="element__like-button" type="button"></button>
+                  <span class="element__like-counter" type="button">0</span>
+              </div>
               <button class="element__delete-button" type="button"></button>
           </article>
       </template>
@@ -112,6 +116,45 @@
           </button>
           <img class="popup__picture" src="#" alt="картинка" />
           <p class="popup__title popup__title_image"></p>
+        </div>
+      </div>
+      <div class="popup popup-avatar">
+        <div class="popup__container">
+          <button
+            type="button"
+            class="popup__close-button popup-avatar__close-button">
+          </button>
+          <h2 class="popup__header">Обновить аватар</h2>
+          <form
+            class="popup__form popup-avatar__form"
+            name="popup__person"
+            novalidate>
+            <input
+              id="link-input"
+              type="text"
+              name="pic"
+              pattern="https?://.+"
+              placeholder="Ссылка на аватар"
+              class="popup__input popup__input_text_subtitle popup-add__input-subtitle"
+              required/>
+            <span class="popup__input-error link-input-error"></span>
+            <button type="submit" class="popup__input-submit">Сохранить</button>
+          </form>
+        </div>
+      </div>
+      <div class="popup popup-warning">
+        <div class="popup__container">
+          <button
+            type="button"
+            class="popup__close-button popup-warning__close-button">
+          </button>
+          <h2 class="popup__header">Вы уверены?</h2>
+          <form
+            class="popup__form popup-warning__form"
+            name="popup__person"
+            novalidate>
+            <button type="submit" class="popup__input-submit">Да</button>
+          </form>
         </div>
       </div>
       <footer class="footer">

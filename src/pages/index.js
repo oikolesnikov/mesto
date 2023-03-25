@@ -21,7 +21,22 @@ import PopupWithForm from '../components/PopupWithForm.js';
 import Section from '../components/Section.js';
 import Card from '../components/Card.js'
 import PopupWithImage from '../components/PopupWithImage.js';
+import Api from '../components/Api.js';
 
+//const api = new Api({
+    //baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-61/cards',
+    //headers: {
+      //authorization: 'dc5df3e9-b270-4692-81cc-452922132293',
+      //'Content-Type': 'application/json'
+    //}
+  //})
+  //.then(res => res.json())
+  //.then((result) => {
+   // console.log(result);
+  //});
+
+
+  
 const validationFormProfile = createFormValidator(profileForm);
 const validationFormImage = createFormValidator(formAdd);
 function createFormValidator(formElement) {
@@ -65,21 +80,32 @@ const popupWithFormAdd = new PopupWithForm('.popup-add', {
 
     handleForm: (item) => {
 
-        const cardElement = createCard(item.nameTitle, item.pic);
+      api.addCards(item).then((item) => {
 
-        defaultCardList.setItem(cardElement);
-    }
+        const cardElement = createCard(item.name, item.link);
+        defaultCardList.addItem(cardElement);
+    })
+    .catch((err) => {
+      console.log(err);
+  });
+  }
 });
 
 popupWithFormAdd.setEventListeners();
 
+const api = new Api();
 
 const defaultCardList = new Section({
     data: initialCards,
-    renderer: (item) => {
-
-        const cardElement = createCard(item.name, item.link);
-        defaultCardList.setItem(cardElement);
+    renderer: () => {
+      
+      api.getCards().then((cards) => {
+        
+        cards.forEach((item) => {
+          const cardElement = createCard(item.name, item.link);
+          defaultCardList.setItem(cardElement);
+      })
+      });
     }
 }, 
     cardListSelector
@@ -96,9 +122,42 @@ function handleCardClick(elementsText, elementsImage) {
   }
 
 function createCard(elementsImage, elementsText) {
-    
+
     const card = new Card({name: elementsImage, link: elementsText}, elementTemplate, handleCardClick);
-   
-    const elementCard = card.newCard();
-    return elementCard;
+
+      const elementCard = card.newCard(elementsImage, elementsText);
+      return elementCard;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+const profileButtonAvatar = document.querySelector('.profile__avatar-edit');
+const popupWithFormAvatar = new PopupWithForm('.popup-avatar', {
+
+    handleForm: (item) => {
+
+        const cardElement = createCard(item.nameTitle, item.pic);
+
+        defaultCardList.setItem(cardElement);
+    }
+});
+
+profileButtonAvatar.addEventListener('click', function () {
+
+    popupWithFormAvatar.open();
+});
+
+
+
+
