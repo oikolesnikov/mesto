@@ -12,3 +12,14 @@
     opacity: 0;
     transition: visibility 0.6s, opacity 0.6s linear;
 }
+
+.popup__loading {
+    display: none;
+}
+.popup__loading_active {
+    display: block;
+}
+
+.popup__btn-default-name_disable {
+    display: none;
+}

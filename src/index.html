@@ -37,6 +37,7 @@
       </template>
       </main>
       <section class="elements">
+        
       </section>
       <div class="popup popup-edit">
         <div class="popup__container">
@@ -69,7 +70,7 @@
               maxlength="40"
               required/>
             <span class="popup__input-error job-input-error"></span>
-            <button type="submit" class="popup__input-submit">Сохранить</button>
+            <button type="submit" class="popup__input-submit popup__btn-default-name">Сохранить</button>
           </form>
         </div>
       </div>
@@ -84,7 +85,7 @@
             <input
               id="name-input"
               type="text"
-              name="nameTitle"
+              name="name"
               placeholder="Название"
               class="popup__input popup__input_text_title popup-add__input-title"
               minlength="2"
@@ -94,17 +95,13 @@
             <input
               id="link-input"
               type="text"
-              name="pic"
+              name="link"
               pattern="https?://.+"
               placeholder="Ссылка на картинку"
               class="popup__input popup__input_text_subtitle popup-add__input-subtitle"
               required/>
             <span class="popup__input-error link-input-error"></span>
-            <button
-              type="submit"
-              class="popup__input-submit popup-add__input-submit">
-              Создать
-            </button>
+            <button type="submit" class="popup__input-submit popup-add__input-submit popup__btn-default-name">Сохранить</button>
           </form>
         </div>
       </div>
@@ -130,15 +127,15 @@
             name="popup__person"
             novalidate>
             <input
-              id="link-input"
+              id="avatar-input"
               type="text"
-              name="pic"
+              name="avatar"
               pattern="https?://.+"
               placeholder="Ссылка на аватар"
-              class="popup__input popup__input_text_subtitle popup-add__input-subtitle"
+              class="popup__input popup__input_text_subtitle"
               required/>
-            <span class="popup__input-error link-input-error"></span>
-            <button type="submit" class="popup__input-submit">Сохранить</button>
+            <span class="popup__input-error avatar-input-error"></span>
+            <button type="submit" class="popup__input-submit popup__btn-default-name">Сохранить</button>
           </form>
         </div>
       </div>
@@ -153,7 +150,7 @@
             class="popup__form popup-warning__form"
             name="popup__person"
             novalidate>
-            <button type="submit" class="popup__input-submit">Да</button>
+            <button class="popup__input-submit popup__input-submit_warning popup__btn-default-name" type="click">Да</button>
           </form>
         </div>
       </div>

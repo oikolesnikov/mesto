@@ -6,12 +6,8 @@ const validationConfig = {
     inputErrorClass: 'popup__input_type_error',
     errorClass: 'popup__input-error_active'
 };
-const profileDescription = {
-    name: '.profile__title',
-    about: '.profile__subtitle',
-};
 const cardListSelector = '.elements';
-const elementTemplate = '.element-template';
+const cardTemplate = '.element-template';
 const initialCards = [
   {
       name: 'Архыз',
@@ -41,9 +37,10 @@ const initialCards = [
 
 export const profilePopup = document.querySelector('.popup-edit');
 export const popupContainer = profilePopup.querySelector('.popup__container');
+export const profileForm = popupContainer.querySelector('.popup__form');
+
 export const itemAddPopup = document.querySelector('.popup-add');
 export const containerAdd = itemAddPopup.querySelector('.popup__container');
-export const profileForm = popupContainer.querySelector('.popup__form');
 export const formAdd = containerAdd.querySelector('.popup__form');
 
 export const profileButtonEdit = document.querySelector('.profile__edit-button');
@@ -52,4 +49,8 @@ export const linkAdd = document.querySelector('.popup__input_text_subtitle');
 
 export const profileButtonAdd = document.querySelector('.profile__add-button');
 
-export { initialCards, validationConfig, profileDescription, cardListSelector, elementTemplate };
+export const avatarPopup = document.querySelector('.popup-avatar');
+export const containerAva = profilePopup.querySelector('.popup__container');
+export const formAva = containerAva.querySelector('.popup__form'); 
+
+export { initialCards, validationConfig, cardListSelector, cardTemplate };
